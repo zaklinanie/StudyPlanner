@@ -1,0 +1,466 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    transition: background-color 0.5s ease;
+}
+
+.container {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 20px;
+    transition: box-shadow 0.5s ease;
+    position: relative;
+}
+
+.main-content {
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-section,
+.right-section {
+    background-color: #ffffff;
+    flex: 1;
+    padding-top: 10px;
+    padding-left: 25px;
+      padding-right: 25px;
+        padding-bottom: 25px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.left-section {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.right-section {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.left-section:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.right-section:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.calendar-container:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.calendar-container {
+    max-height: 200px;
+    padding: 15px;
+    border-radius: 15px;
+    display: flex;    
+    flex-direction: column; 
+    background-color: #fff;
+    overflow: clip;
+    margin-top: 10px;
+    margin-right: 25px;
+    position: relative;
+    align-items: flex-start;
+}
+
+
+.section-title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.add-button {
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+    background-color: #eec700;
+    transform: translateY(-2px);
+}
+
+.item-block {
+    background-color: #fff2cc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s, transform 0.2s;
+    position: relative;
+}
+
+.item-block:hover {
+    background-color: #fff8e6;
+    transform: translateY(-3px);
+}
+
+.item-block.past-event:hover {
+    background-color: #e6f8e6;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.item-header h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #333;
+}
+
+.item-header .arrow {
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.item-header .arrow.rotate {
+    transform: rotate(180deg);
+}
+
+.item-date {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 8px;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+}
+
+.days-left {
+    font-size: 1em;
+    color: #e74c3c;
+    margin-top: 5px;
+    display: block;
+}
+
+.time-left {
+    font-size: 0.9em;
+    color: #e74c3c;
+    white-space: pre-line;
+    margin-top: 5px;
+
+}
+.item-date .time-left{
+    margin-top: 2px;
+}
+
+.past-event {
+    background-color: #c2f2c2;
+}
+
+
+.item-content {
+    margin-top: 15px;
+    display: none;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.item-content.show {
+    display: block;
+}
+
+.item-content h4 {
+    margin-bottom: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+.file-link {
+    display: block;
+    max-width: 100%;
+    white-space: nowrap;
+     overflow: hidden;
+    text-overflow: ellipsis;
+}
+.file-list {
+    margin-bottom: 15px;
+}
+
+.file-list ul {
+    padding: 0;
+    list-style: none;
+}
+
+.file-list li {
+    margin-bottom: 8px;
+    padding: 10px 15px;
+    background-color: #eee;
+    border-radius: 7px;
+        max-width: 100%;
+        overflow: hidden;
+         display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+}
+
+.file-list li a {
+    text-decoration: none;
+    color: #007bff;
+
+}
+
+.file-list li button.remove-file {
+      background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    justify-self: end;
+
+}
+
+
+.file-list li button:hover {
+    background-color: #c82333;
+}
+
+.notes-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.notes-section button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    display: block;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notes-section button:hover {
+    background-color: #0056b3;
+}
+
+.notes-list {
+    margin-top: 12px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.notes-list li {
+    margin-bottom: 12px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background-color: #f9f9f9;
+}
+
+.notes-list li .note-date {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 12px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-button:hover {
+    color: black;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"] ,
+.modal-content input[type="time"] {
+    width: calc(100% - 12px);
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+.modal-content .save-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    display: block;
+    margin: 18px auto 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content .save-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.next-month-day {
+    color: #999;
+}
+
+.calendar-title {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #333;
+    font-size: 16pt;
+    margin-left: 25px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#calendar {
+    max-width: 50%;
+    border-collapse: collapse;
+}
+
+#calendar th,
+#calendar td {
+    text-align: center;
+    padding: 3px;
+    font-size: 0.7em;
+}
+
+#calendar th {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+#calendar td {
+    border: 1px solid #eee;
+    position: relative;
+}
+
+#calendar td.event {
+    cursor: pointer;
+}
+
+#calendar td.event-credit {
+    background-color: #ffa500;
+}
+
+#calendar td.event-exam {
+    background-color: #ff7f50;
+}
+
+#calendar td .tooltip {
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.8em;
+}
+
+#calendar td.event:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.item-remove-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 1px 4px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 8px;
+    right: 6px;
+ 
+}
+.teacher-name {
+    font-size: 0.7em;      
+    color: #777;           
+    margin-left: 15px; 
+    margin-right: 10px;  
+}
+.item-remove-button:hover {
+    background-color: #c82333;
+}

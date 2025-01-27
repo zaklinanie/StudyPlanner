@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Учебный Планировщик</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="main-content">
+            <div class="left-section">
+                <h2 class="section-title">Зачеты</h2>
+                <button class="add-button" data-type="credit"><i class="fas fa-plus"></i> Добавить</button>
+                <div id="credits-list" class="items-list"></div>
+            </div>
+            <div class="right-section">
+                <h2 class="section-title">Экзамены</h2>
+                <button class="add-button" data-type="exam"><i class="fas fa-plus"></i> Добавить</button>
+                <div id="exams-list" class="items-list"></div>
+            </div>
+               <div class="calendar-container"> 
+                <div class="calendar-title">Календарь</div>
+                <div id="calendar"></div>
+                </div> 
+                </div>
+        
+    </div>
+ 
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Добавить предмет</h2>
+            <form id="modal-form">
+                <input type="hidden" id="item-type">
+                <label for="item-name">Название:</label>
+                <input type="text" id="item-name" required>
+                <label for="item-date">Дата:</label>
+                <input type="date" id="item-date" required>
+                 <label for="item-time">Время:</label>
+                <input type="time" id="item-time" required>
+                <label for="item-teacher">Преподаватель:</label>
+                <input type="text" id="item-teacher" required>
+                <button type="submit" class="save-button">Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
