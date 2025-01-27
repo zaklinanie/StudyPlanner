@@ -12,6 +12,7 @@ body {
 
 .container {
     display: flex;
+    width: 95%;
     margin-top: 20px;
     margin-left: 20px;
     transition: box-shadow 0.5s ease;
@@ -65,12 +66,12 @@ body {
     max-height: 200px;
     padding: 15px;
     border-radius: 15px;
-    display: flex;    
-    flex-direction: column; 
+    display: flex;    /* Добавляем flex контейнер */
+    flex-direction: column; /* Расположение элементов сверху вниз */
     background-color: #fff;
     overflow: clip;
     margin-top: 10px;
-    margin-right: 25px;
+    margin-right: 5px;
     position: relative;
     align-items: flex-start;
 }
@@ -456,10 +457,10 @@ body {
  
 }
 .teacher-name {
-    font-size: 0.7em;      
-    color: #777;           
+    font-size: 0.7em;      /* Уменьшаем размер шрифта */
+    color: #777;           /* Делаем цвет неярким серым */
     margin-left: 15px; 
-    margin-right: 10px;  
+    margin-right: 10px;  /* Добавляем небольшой отступ слева */
 }
 .item-remove-button:hover {
     background-color: #c82333;
